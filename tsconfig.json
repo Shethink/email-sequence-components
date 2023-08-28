@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react-jsx",
+        "lib": ["ESNext", "DOM"],
+        "moduleResolution": "Node",
+        "declaration": true,
+        "esModuleInterop": true,
+        "noEmit": false,
+        "skipDefaultLibCheck": true,
+        "strict": true,
+        "resolveJsonModule": true,
+        "target": "ESNext",
+        "inlineSourceMap": true,
+        "rootDirs": ["src"],
+        "baseUrl": ".",
+        "jsxImportSource": "@emotion/react",
+        "outDir": "dist",
+        "typeRoots": ["node_modules/@types", "@types"]
+    }
+}

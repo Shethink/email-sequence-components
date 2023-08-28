@@ -1,0 +1,68 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+.yalc/
+yalc.lock
+
+# Build output
+dist/
+build/
+styleguide/
+
+# Test output
+coverage/
+coverage-ts/
+
+# OS
+.DS_Store
+
+# Dotenv files
+.env*
+!.env.example
+
+# Netlify build data
+.netlify
+
+license_finder_output.html
+
+.yarn_cache
+**/junit.xml
+
+# Added in by GitLab CI code_quality job if ran locally
+.csslintrc
+.rubocop.yml
+coffeelint.json
+gl-code-quality-report.json
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+tsconfig.tsbuildinfo
+
+# Firebase hosting
+.firebase/
+
+# Rest Client secrets
+http-client.private.env.json
+
+.idea/
+*.ipr
+*.iws
+*.iml
+
+target/
+package-lock.json
+
+**/gl-dast-report.json
