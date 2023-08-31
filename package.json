@@ -1,5 +1,5 @@
 {
-  "name": "@sourcebae/email-sequence-components",
+  "name": "@sourcebae-admin/email-sequence-components",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -20,6 +20,9 @@
     "*": {
       "theme-provider": [
         "./dist/theme-provider/index.d.ts"
+      ],
+      "clickable": [
+        "./dist/clickable/index.d.ts"
       ]
     }
   },
@@ -28,6 +31,11 @@
       "require": "./dist/theme-provider/index.js",
       "import": "./dist/esm/theme-provider/index.js",
       "types": "./dist/theme-provider/index.d.ts"
+    },
+    "./clickable": {
+      "require": "./dist/clickable/index.js",
+      "import": "./dist/esm/clickable/index.js",
+      "types": "./dist/clickable/index.d.ts"
     }
   },
   "dependencies": {

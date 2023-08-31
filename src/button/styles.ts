@@ -22,6 +22,7 @@ export const buttonClasses = {
 };
 
 export const StyledButton = styled(MaterialButton)(
+  // @ts-ignore
   ({ theme: { colours, palette } }) => ({
     [`&.${buttonClasses.root}`]: {
       fontSize: "1rem",
@@ -111,6 +112,7 @@ export const StyledButton = styled(MaterialButton)(
 );
 
 export const StyledIconButton = styled(IconButton)(
+  // @ts-ignore
   ({ theme: { colours, palette } }) => {
     const iconButtonBuffer = (margin: number | string) => ({
       "&::after": {
