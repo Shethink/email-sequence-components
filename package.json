@@ -1,8 +1,10 @@
 {
-  "name": "@sourcebae-admin/email-sequence-components",
+  "name": "@shethink/email-sequence-components",
   "version": "1.0.0",
-  "description": "",
   "main": "dist/index.js",
+  "src": "src/index.ts",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
@@ -87,5 +89,14 @@
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://Anukr98: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@github.com/Shethink/email-sequence-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shethink/email-sequence-components/issues"
+  },
+  "homepage": "https://github.com/Shethink/email-sequence-components#readme",
+  "description": ""
 }
