@@ -4,6 +4,7 @@ import {
   SimplePaletteColorOptions,
   ThemeOptions as MuiThemeOptions,
   ThemeProvider as MaterialThemeProvider,
+  tooltipClasses,
 } from "@mui/material";
 import React from "react";
 import {
@@ -15,14 +16,9 @@ import { globalStyles } from "./globalStyles";
 
 export const colours = {
   bodyBgBase: "#fff",
-  alabasterA: "#fafafa",
-  alabaster: "#f0f0f0",
-  alert: "#ffc72c",
-  aqua100: "#d9f0ed",
-  aqua200: "#8dd3c9",
-  aqua400: "#41b6a5",
-  aqua500: "#359486",
   black: "#000000",
+  black200: "#1a1a1a",
+  black800: "#e3e3e5",
   blue100: "#d6d7dc",
   blue300: "#858895",
   blue800: "#34384f",
@@ -35,44 +31,10 @@ export const colours = {
   cyan500: "#0072b0",
   cyan600: "#005b8c",
   cyan700: "#004b73",
-  error: "#d6001c",
-  magenta100: "#f2cfdb",
-  magenta200: "#d97094",
-  magenta400: "#bf104d",
-  magenta500: "#940c3b",
-  orange100: "#fad8cf",
-  orange200: "#f08970",
-  orange400: "#e63b11",
-  orange500: "#ad2c0c",
-  pearl: "#f7f7f7",
-  purple100: "#e5cfe0",
-  purple200: "#b26ea1",
-  purple400: "#7f0e62",
-  purple500: "#660b4f",
   slate: "#70706f",
-  storm: "#cccccc",
-  success: "#009a44",
-  teal100: "#d2e4e8",
-  teal200: "#79adbb",
-  teal400: "#20778e",
-  teal500: "#1a6073",
   white: "#ffffff",
-  brandRed300: "#fd543e",
-  brandRed: "#e30613",
-  brandRedInter: "#d10513",
-  brandRedFocus: "#b30510",
-  royalBlue: "#004f9f",
-  royalBlueFocus: "#003d7a",
-  purple300: "#8985d6",
-  purple: "#201e5b",
-  purpleFocus: "#161542",
-  navyBlue: "#133579",
-  navyBlueFocus: "#0e2a5d",
-  sealoflexBlue: "#00539c",
-  sealoflexBlueFocus: "#003c70",
-  brandGreen: "#2aa94e",
-  brandGreenInter: "#1f7a39",
-  brandGreenFocus: "#1a6531",
+  white100: "#f7f7f7",
+  white500: "#cacacc",
 };
 
 type PaletteOptions = Omit<
@@ -107,59 +69,51 @@ export const getTheme = (
 ) => {
   const getCssOverrides = () => ({
     components: {
-      // MuiCssBaseline: {
-      //   styleOverrides: `
-      //         ${effraRegular}
-      //         ${effraMedium}
-      //         ${effraBold}
-      //         ${effraHeavy}
-      //       `
-      // },
-      // MuiTableRow: {
-      //   styleOverrides: {
-      //     head: {
-      //       border: `1px solid ${colours.storm}`
-      //     }
-      //   }
-      // },
-      // MuiTableCell: {
-      //   styleOverrides: {
-      //     head: {
-      //       color: "inherit",
-      //       padding: "16px",
-      //       fontWeight: "bold"
-      //     },
-      //     body: {
-      //       padding: "1rem 16px 0.67rem",
-      //       verticalAlign: "top",
-      //       border: 0
-      //     }
-      //   }
-      // },
-      // MuiTooltip: {
-      //   styleOverrides: {
-      //     popper: {
-      //       zIndex: 9,
-      //       [`.${tooltipClasses.tooltipPlacementBottom}`]: {
-      //         margin: 0
-      //       }
-      //     }
-      //   }
-      // },
-      // MuiTypography: {
-      //   styleOverrides: {
-      //     h3: {
-      //       "::after": {
-      //         marginTop: "0.75rem"
-      //       }
-      //     },
-      //     h4: {
-      //       "::after": {
-      //         marginTop: "0.5rem"
-      //       }
-      //     }
-      //   }
-      // }
+      MuiCssBaseline: {
+        styleOverrides: `
+              ${poppinsRegularFont}
+              ${poppinsMediumFont}
+              ${poppinsBoldFont}
+            `,
+      },
+      MuiTableCell: {
+        styleOverrides: {
+          head: {
+            color: "inherit",
+            padding: "16px",
+            fontWeight: "bold",
+          },
+          body: {
+            padding: "1rem 16px 0.67rem",
+            verticalAlign: "top",
+            border: 0,
+          },
+        },
+      },
+      MuiTooltip: {
+        styleOverrides: {
+          popper: {
+            zIndex: 9,
+            [`.${tooltipClasses.tooltipPlacementBottom}`]: {
+              margin: 0,
+            },
+          },
+        },
+      },
+      MuiTypography: {
+        styleOverrides: {
+          h3: {
+            "::after": {
+              marginTop: "0.75rem",
+            },
+          },
+          h4: {
+            "::after": {
+              marginTop: "0.5rem",
+            },
+          },
+        },
+      },
     },
   });
 
@@ -213,36 +167,42 @@ export const getTheme = (
       },
     },
     typography: {
-      fontFamily: "Effra Regular",
+      fontFamily: "Poppins",
       h1: {
-        fontFamily: "Effra Heavy",
+        fontFamily: "Poppins",
+        fontWeight: "bold",
         fontSize: "2.125rem",
         letterSpacing: "-0.2px",
         lineHeight: 1.2,
       },
       h2: {
-        fontFamily: "Effra Heavy",
+        fontFamily: "Poppins",
+        fontWeight: "bold",
         fontSize: "1.75rem",
         letterSpacing: "-0.2px",
         lineHeight: 1.2,
       },
       h3: {
-        fontFamily: "Effra Bold",
+        fontFamily: "Poppins",
+        fontWeight: "600",
         fontSize: "1.5rem",
         lineHeight: 1.2,
       },
       h4: {
-        fontFamily: "Effra Bold",
+        fontFamily: "Poppins",
+        fontWeight: "normal",
         fontSize: "1.35rem",
         lineHeight: 1.2,
       },
       h5: {
-        fontFamily: "Effra Medium",
+        fontFamily: "Poppins",
+        fontWeight: "normal",
         fontSize: "1.25rem",
         lineHeight: 1.2,
       },
       h6: {
-        fontFamily: "Effra Medium",
+        fontFamily: "Poppins",
+        fontWeight: "lighter",
         fontSize: "1.125rem",
         lineHeight: 1.2,
       },
@@ -253,6 +213,9 @@ export const getTheme = (
       body2: {
         fontSize: "1.125rem",
         lineHeight: 1.4,
+      },
+      subtitle2: {
+        fontSize: ".85rem",
       },
       button: {
         textTransform: "none",
