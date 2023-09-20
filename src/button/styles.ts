@@ -25,9 +25,10 @@ export const StyledButton = styled(MaterialButton)(
   // @ts-ignore
   ({ theme: { colours, palette } }) => ({
     [`&.${buttonClasses.root}`]: {
-      fontSize: "1rem",
+      fontSize: ".8rem",
       borderRadius: 3,
       overflowWrap: "anywhere",
+      height: "30px",
     },
     [`&.${buttonClasses.text}`]: {
       "&:hover": {

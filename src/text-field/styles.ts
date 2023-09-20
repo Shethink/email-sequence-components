@@ -9,7 +9,7 @@ export const inputClasses = {
 };
 
 export const Input = styled("input")(() => ({
-  height: "30px",
+  height: "35px",
   width: "100%",
   borderRadius: "3px",
   paddingLeft: "6px",

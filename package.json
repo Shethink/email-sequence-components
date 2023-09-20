@@ -25,6 +25,27 @@
       ],
       "clickable": [
         "./dist/clickable/index.d.ts"
+      ],
+      "button": [
+        "./dist/button/index.d.ts"
+      ],
+      "create-sequence": [
+        "./dist/create-sequence/index.d.ts"
+      ],
+      "icon": [
+        "./dist/icon/index.d.ts"
+      ],
+      "modal": [
+        "./dist/modal/index.d.ts"
+      ],
+      "row": [
+        "./dist/row/index.d.ts"
+      ],
+      "select": [
+        "./dist/select/index.d.ts"
+      ],
+      "text-field": [
+        "./dist/text-field/index.d.ts"
       ]
     }
   },
@@ -38,6 +59,41 @@
       "require": "./dist/clickable/index.js",
       "import": "./dist/esm/clickable/index.js",
       "types": "./dist/clickable/index.d.ts"
+    },
+    "./button": {
+      "require": "./dist/button/index.js",
+      "import": "./dist/esm/button/index.js",
+      "types": "./dist/button/index.d.ts"
+    },
+    "./create-sequence": {
+      "require": "./dist/create-sequence/index.js",
+      "import": "./dist/esm/create-sequence/index.js",
+      "types": "./dist/create-sequence/index.d.ts"
+    },
+    "./icon": {
+      "require": "./dist/icon/index.js",
+      "import": "./dist/esm/icon/index.js",
+      "types": "./dist/icon/index.d.ts"
+    },
+    "./modal": {
+      "require": "./dist/modal/index.js",
+      "import": "./dist/esm/modal/index.js",
+      "types": "./dist/modal/index.d.ts"
+    },
+    "./row": {
+      "require": "./dist/row/index.js",
+      "import": "./dist/esm/row/index.js",
+      "types": "./dist/row/index.d.ts"
+    },
+    "./select": {
+      "require": "./dist/select/index.js",
+      "import": "./dist/esm/select/index.js",
+      "types": "./dist/select/index.d.ts"
+    },
+    "./text-field": {
+      "require": "./dist/text-field/index.js",
+      "import": "./dist/esm/text-field/index.js",
+      "types": "./dist/text-field/index.d.ts"
     }
   },
   "dependencies": {
@@ -49,7 +105,8 @@
     "@mui/styles": "^5.14.0",
     "@mui/system": "^5.14.0",
     "classnames": "^2.3.2",
-    "react-is": "^18.2.0"
+    "react-is": "^18.2.0",
+    "react-select": "^5.7.4"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.10",

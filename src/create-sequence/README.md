@@ -1,18 +1,6 @@
-The purpose of this component is to wrap any clickable thing (e.g. buttons, anchors, etc) and delegate the logic to it.
-
-## Variants
-
-### types
-
-The `Clickable` component allows different models. For each of those there are specific properties.
-
-#### `default`
-
-`Props`: Any allowed on `<button>`
-
-Renders a `<button type="button">` element with the given props.
-
 ```jsx
+import React from "react";
+
 const createOptions = [
   {
     url: "https://mail-sequence.s3.ap-south-1.amazonaws.com/download.svg",
@@ -31,5 +19,21 @@ const createOptions = [
   },
 ];
 
-<CreateSequence createOptions={createOptions}></CreateSequence>;
+const [sequenceName, setSequenceName] = React.useState("");
+const [open, setOpen] = React.useState(true);
+
+<CreateSequence
+  createOptions={createOptions}
+  permissionsOptions={[
+    { label: "Teams can view and use", value: "view and use" },
+  ]}
+  schedules={[
+    { label: "Normal business hours", value: "Normal hours" },
+    { label: "Weekends only", value: "Weekends" },
+  ]}
+  sequenceName={sequenceName}
+  handleSequenceNameChange={(name) => setSequenceName(name)}
+  open={open}
+  onClose={() => setOpen(false)}
+></CreateSequence>;
 ```

@@ -8,11 +8,15 @@ import {
   Card,
   CreateSequenceCardContainer,
   CreateSequenceForm,
+  CreateSequenceFormButtonsContainer,
+  CreateSequenceFormLabel,
+  SchedulesContainer,
   cardClasses,
 } from "./styles";
 import classNames from "classnames";
 import { colours } from "../theme-provider";
 import TextField from "../text-field/TextField";
+import Select, { SelectOption } from "../select";
 
 export type SequenceOptions = {
   url: string;
@@ -20,16 +24,19 @@ export type SequenceOptions = {
   subtitle: string;
 };
 
-interface Props extends ModalProps {
+export interface CreateSequenceProps extends ModalProps {
   createOptions: SequenceOptions[];
   sequenceName: string;
   handleSequenceNameChange: (name: string) => void;
   title?: string;
   subheader?: string;
   step2Title?: string;
+  permissionsOptions: SelectOption[];
+  schedules?: SelectOption[];
+  handleCreate: () => void;
 }
 
-export const CreateSequence: React.FC<Props> = ({
+const CreateSequence: React.FC<CreateSequenceProps> = ({
   createOptions,
   open,
   onClose,
@@ -38,6 +45,9 @@ export const CreateSequence: React.FC<Props> = ({
   title = "Create a sequence",
   subheader = "Sequences are a series of automated or manual touchpoints and activities, designed to drive deeper engagement with your contacts.",
   step2Title = "Customize this sequence’s name, permission settings, sending schedule, and more.",
+  permissionsOptions,
+  schedules,
+  handleCreate,
 }) => {
   const headerTitle = "New Sequence";
   const [currentStep, setCurrentStep] = useState<1 | 2>(1);
@@ -45,11 +55,11 @@ export const CreateSequence: React.FC<Props> = ({
   const handleClick = (newStep: 1 | 2) => setCurrentStep(newStep);
 
   return (
-    <Modal open onClose={onClose} centered>
+    <Modal open={open} onClose={onClose} centered>
       {currentStep === 1 ? (
         <>
           <Row style={{ justifyContent: "flex-end" }}>
-            <Button variant="text">
+            <Button variant="text" onClick={onClose}>
               <Close />
             </Button>
           </Row>
@@ -107,25 +117,64 @@ export const CreateSequence: React.FC<Props> = ({
               </Typography>
 
               <CreateSequenceForm>
-                <Row>
-                  <div style={{ width: "50%" }}>
-                    <Typography
-                      variant="subtitle1"
-                      fontWeight={"600"}
-                      fontSize={13}
-                    >
-                      Sequence for
-                    </Typography>
-                    <TextField
-                      variant="outlined"
-                      value={sequenceName}
-                      onChange={handleSequenceNameChange}
-                    />
-                  </div>
-                  <div style={{ width: "50%" }}>
-                    <Typography>Permissions</Typography>
-                  </div>
-                </Row>
+                <div>
+                  <Row style={{ justifyContent: "space-between" }}>
+                    <div style={{ width: "45%" }}>
+                      <CreateSequenceFormLabel variant="subtitle1">
+                        Sequence for
+                      </CreateSequenceFormLabel>
+                      <TextField
+                        variant="outlined"
+                        value={sequenceName}
+                        onChange={handleSequenceNameChange}
+                      />
+                    </div>
+                    <div style={{ width: "50%" }}>
+                      <CreateSequenceFormLabel>
+                        Permissions
+                      </CreateSequenceFormLabel>
+                      <Select
+                        options={permissionsOptions}
+                        isInsideModal
+                        styles={{
+                          container: () => ({ marginTop: 5 }),
+                        }}
+                      />
+                    </div>
+                  </Row>
+
+                  <SchedulesContainer>
+                    <Row>
+                      <div style={{ width: "45%" }}>
+                        <CreateSequenceFormLabel>
+                          Schedule
+                        </CreateSequenceFormLabel>
+                        <Select
+                          options={schedules}
+                          isMultiple
+                          isInsideModal
+                          isAnimated
+                          styles={{
+                            container: () => ({ marginTop: 5 }),
+                          }}
+                        />
+                      </div>
+                    </Row>
+                  </SchedulesContainer>
+
+                  <CreateSequenceFormButtonsContainer>
+                    <Row style={{ justifyContent: "flex-end" }}>
+                      <Button
+                        variant="outlined"
+                        style={{ marginRight: "10px" }}
+                        onClick={() => handleClick(1)}
+                      >
+                        {"Back"}
+                      </Button>
+                      <Button onClick={handleCreate}>{"Create"}</Button>
+                    </Row>
+                  </CreateSequenceFormButtonsContainer>
+                </div>
               </CreateSequenceForm>
             </Box>
           </Box>
@@ -134,3 +183,5 @@ export const CreateSequence: React.FC<Props> = ({
     </Modal>
   );
 };
+
+export default CreateSequence;
