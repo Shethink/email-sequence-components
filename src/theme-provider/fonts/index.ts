@@ -1,5 +1,4 @@
 import PoppinsBold from "./Poppins-Bold.woff2";
-import PoppinsHeavy from "./Effra_W_Heavy.woff2";
 import PoppinsMedium from "./Poppins-Medium.woff2";
 import PoppinsRegular from "./Poppins-Regular.woff2";
 

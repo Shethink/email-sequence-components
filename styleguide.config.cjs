@@ -55,12 +55,12 @@ module.exports = {
       };
     }),
 
-  //   getComponentPathLine: (componentPath) => {
-  //     const componentName = path.basename(componentPath, ".tsx");
+  getComponentPathLine: (componentPath) => {
+    const componentName = path.basename(componentPath, ".tsx");
 
-  //     // NOTE: this is displayed under the component name
-  //     return `import { ${componentName} } from "@bmi-digital/components";`;
-  //   },
+    // NOTE: this is displayed under the component name
+    return `import { ${componentName} } from "@shethink/email-sequence-components";`;
+  },
 
   getExampleFilename: (componentPath) => {
     const specificComponentExampleFile = path

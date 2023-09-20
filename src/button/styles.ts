@@ -1,5 +1,6 @@
 import { alpha, Button as MaterialButton, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { colours } from "../theme-provider";
 
 const PREFIX = "Button";
 
@@ -22,8 +23,7 @@ export const buttonClasses = {
 };
 
 export const StyledButton = styled(MaterialButton)(
-  // @ts-ignore
-  ({ theme: { colours, palette } }) => ({
+  ({ theme: { palette } }) => ({
     [`&.${buttonClasses.root}`]: {
       fontSize: ".8rem",
       borderRadius: 3,
@@ -83,7 +83,7 @@ export const StyledButton = styled(MaterialButton)(
           position: "absolute",
           top: 0,
           left: 0,
-          backgroundColor: alpha(colours.focus, 0.04),
+          // backgroundColor: alpha(colours.focus, 0.04),
         },
       },
       "&.Mui-disabled": {
@@ -92,21 +92,21 @@ export const StyledButton = styled(MaterialButton)(
     },
     [`&.${buttonClasses.opaqueOutlinedDarkBg}`]: {
       color: palette.primary.dark,
-      borderColor: alpha(colours.interDark, 0.5),
+      // borderColor: alpha(colours.interDark, 0.5),
       "&:hover": {
-        borderColor: colours.interDark,
+        // borderColor: colours.interDark,
         "&::after": {
-          backgroundColor: alpha(colours.interDark, 0.04),
+          // backgroundColor: alpha(colours.interDark, 0.04),
         },
       },
     },
     [`&.${buttonClasses.containedDarkBg}`]: {
-      backgroundColor: colours.interDark,
+      // backgroundColor: colours.interDark,
       "&:hover": {
-        backgroundColor: colours.focusDark,
+        // backgroundColor: colours.focusDark,
       },
       "&.Mui-disabled": {
-        backgroundColor: alpha(colours.interDark, 0.38),
+        // backgroundColor: alpha(colours.interDark, 0.38),
       },
     },
   })
