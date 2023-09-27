@@ -15,6 +15,7 @@ const [checked, setChecked] = React.useState(true);
     checked={checked}
     onChange={(e) => setChecked(e)}
     icon={<Close />}
+    styles={{ backgroundColor: "green" }}
   />
   <span>Some label</span>
 </>;

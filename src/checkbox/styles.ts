@@ -5,6 +5,7 @@ export const CheckboxContainer = styled("ul")(() => ({
   position: "relative",
   margin: 0,
   padding: 0,
+
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -33,6 +34,7 @@ export const CheckboxList = styled("li")(() => ({
   // listStyle: "ethiopic-halehame-om-et",
   position: "relative",
   listStyle: "none",
+
   textAlign: "center",
   margin: "15px",
 }));

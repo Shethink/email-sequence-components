@@ -1,4 +1,9 @@
-import React, { ChangeEvent, InputHTMLAttributes } from "react";
+import React, {
+  CSSProperties,
+  ChangeEvent,
+  InputHTMLAttributes,
+  useState,
+} from "react";
 import {
   CheckboxContainer,
   CheckboxIconContainer,
@@ -12,20 +17,35 @@ export type CheckboxProps = Omit<
   "checked" | "onChange"
 > & {
   isChecked?: boolean;
+  checked?: boolean;
   onChange?: (checked: boolean) => void;
   icon?: JSX.Element;
+  styles?: CSSProperties;
 };
 
-const Checkbox = ({ isChecked, onChange, icon, ...props }: CheckboxProps) => {
-  const handleCheck = (e: ChangeEvent<HTMLInputElement>) =>
-    onChange && onChange(e.target.checked);
+const Checkbox = ({
+  isChecked,
+  styles,
+  onChange,
+  icon,
+  checked,
+  ...props
+}: CheckboxProps) => {
+  const handleCheck = (e: boolean) => {
+    onChange && onChange(e);
+  };
 
   return (
     <CheckboxContainer>
       <CheckboxList>
         <CheckboxLabel>
           <StyledCheckbox type="checkbox" />
-          <CheckboxIconContainer>{icon}</CheckboxIconContainer>
+          <CheckboxIconContainer
+            style={{ ...styles }}
+            onClick={() => handleCheck(!checked)}
+          >
+            {checked ? icon : ""}
+          </CheckboxIconContainer>
         </CheckboxLabel>
       </CheckboxList>
     </CheckboxContainer>
