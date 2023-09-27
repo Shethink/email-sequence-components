@@ -91,7 +91,7 @@ export const StyledButton = styled(MaterialButton)(
       },
     },
     [`&.${buttonClasses.opaqueOutlinedDarkBg}`]: {
-      color: palette.primary.dark,
+      color: palette.primary.main,
       // borderColor: alpha(colours.interDark, 0.5),
       "&:hover": {
         // borderColor: colours.interDark,

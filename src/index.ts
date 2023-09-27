@@ -8,6 +8,7 @@ import Clickable, {
   RouterLink,
   withClickable,
 } from "./clickable";
+import Container, { ContainerProps, containerClasses } from "./container";
 import CreateSequence, {
   CreateSequenceProps,
   SequenceOptions,
@@ -16,6 +17,10 @@ import { Close } from "./icon";
 import Modal, { modalClasses, ModalProps } from "./modal";
 import Row from "./row";
 import Select, { SelectProps, SelectOption } from "./select";
+import SequenceList, {
+  SequenceListItem,
+  SequenceListProps,
+} from "./sequence-list";
 import TextField, { inputClasses, InputProps } from "./text-field";
 import ThemeProvider, {
   poppinsRegularFont,
@@ -30,6 +35,8 @@ export {
   buttonClasses,
   Clickable,
   Close,
+  Container,
+  containerClasses,
   CreateSequence,
   getTheme,
   inputClasses,
@@ -40,6 +47,7 @@ export {
   poppinsBoldFont,
   Row,
   Select,
+  SequenceList,
   TextField,
   ThemeProvider,
   withClickable,
@@ -49,6 +57,7 @@ export type {
   ClickableAction,
   ClickableDefault,
   ClickableProps,
+  ContainerProps,
   CreateSequenceProps,
   SequenceOptions,
   DownloadLink,
@@ -59,5 +68,7 @@ export type {
   RouterLink,
   SelectOption,
   SelectProps,
+  SequenceListItem,
+  SequenceListProps,
   ThemeOptions,
 };

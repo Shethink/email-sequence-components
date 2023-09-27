@@ -15,6 +15,7 @@ import {
 import { globalStyles } from "./globalStyles";
 
 export const colours = {
+  primary: "#51226f",
   bodyBgBase: "#fff",
   black: "#000000",
   black200: "#1a1a1a",
@@ -28,7 +29,7 @@ export const colours = {
   cyan200: "#66c5ee",
   cyan300: "#33b2e9",
   cyan400: "#009fe3",
-  cyan500: "#0072b0",
+  cyan500: "#51226f",
   cyan600: "#005b8c",
   cyan700: "#004b73",
   slate: "#70706f",
@@ -49,6 +50,7 @@ type PaletteOptions = Omit<
 export type ThemeOptions = Omit<MuiThemeOptions, "palette"> & {
   palette: PaletteOptions;
   colours: typeof colours & {
+    primary: string;
     // Separated out as they by default use common colours
     accent300: string;
     accent: string;
@@ -129,6 +131,7 @@ export const getTheme = (
     },
     colours: {
       ...colours,
+      primary: colours.primary,
       accent300: colours.cyan400,
       accent: colours.cyan400,
       inter: colours.cyan500,
