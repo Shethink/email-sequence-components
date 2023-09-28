@@ -52,11 +52,15 @@ export const StyledCheckbox = styled("input")(() => ({
 export const CheckboxIconContainer = styled("div")(() => ({
   width: "60px",
   height: "60px",
-  background: "#101010",
+  color: colours.white500,
+  background: "transparent",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   border: "3px solid #000",
   borderRadius: "10px",
   transition: ".5s",
+  [`&.backgroundstyle`]: {
+    background: colours.primary,
+  },
 }));

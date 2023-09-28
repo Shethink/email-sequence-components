@@ -11,6 +11,7 @@ import {
   CheckboxList,
   StyledCheckbox,
 } from "./styles";
+import { log } from "console";
 
 export type CheckboxProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -32,6 +33,7 @@ const Checkbox = ({
   ...props
 }: CheckboxProps) => {
   const handleCheck = (e: boolean) => {
+    console.log(e, "sd");
     onChange && onChange(e);
   };
 
@@ -42,6 +44,7 @@ const Checkbox = ({
           <StyledCheckbox type="checkbox" />
           <CheckboxIconContainer
             style={{ ...styles }}
+            className={`${checked && "backgroundstyle"}`}
             onClick={() => handleCheck(!checked)}
           >
             {checked ? icon : ""}
