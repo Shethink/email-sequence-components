@@ -1,6 +1,6 @@
+import React from "react";
 import { Container as MUIContainer, ContainerProps } from "@mui/material";
 import classnames from "classnames";
-import React from "react";
 import { classes, Root } from "./styles";
 
 export type Props = ContainerProps & {

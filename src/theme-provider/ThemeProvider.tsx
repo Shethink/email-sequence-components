@@ -19,6 +19,7 @@ export const colours = {
   bodyBgBase: "#fff",
   black: "#000000",
   black200: "#1a1a1a",
+  black400: "#474747",
   black800: "#e3e3e5",
   blue100: "#d6d7dc",
   blue300: "#858895",
@@ -36,6 +37,7 @@ export const colours = {
   white: "#ffffff",
   white100: "#f7f7f7",
   white500: "#cacacc",
+  white800: "#919191",
 };
 
 type PaletteOptions = Omit<
@@ -125,7 +127,7 @@ export const getTheme = (
         xs: 0,
         sm: 600,
         md: 720,
-        lg: 840,
+        lg: 1100,
         xl: 1440,
       },
     },
@@ -147,10 +149,8 @@ export const getTheme = (
     },
     palette: {
       primary: {
-        // light: will be calculated from palette.primary.main,
-        main: colours.cyan500,
-        dark: colours.cyan600,
-        // contrastText: will be calculated to contrast with palette.primary.main
+        main: colours.primary,
+        dark: colours.primary,
       },
       secondary: {
         light: "#0066ff",
