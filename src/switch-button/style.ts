@@ -1,16 +1,16 @@
-import { Switch, sliderClasses } from "@mui/material";
+import { Switch, SwitchClasses } from "@mui/material";
 import { styled } from "@mui/system";
 import { colours } from "src/theme-provider";
 
-const PREFIX = "Slider";
+const PREFIX = "Switch";
 
-export const sliderClass = {
+export const SwitchClass = {
   root: `${PREFIX}-root`,
   thumb: `${PREFIX}-thumb`,
 };
 
 export const StyleSwitch = styled(Switch)(({ theme }) => ({
-  [`&.${sliderClass.root}`]: {
+  [`&.${SwitchClass.root}`]: {
     borderRadius: 25,
     padding: 0,
     width: 40,
@@ -43,7 +43,8 @@ export const StyleSwitch = styled(Switch)(({ theme }) => ({
       "& + .MuiSwitch-track": {
         opacity: 1,
 
-        backgroundColor: theme.palette.mode === "dark" ? "#cacacc" : "#146ef6",
+        backgroundColor:
+          theme.palette.mode === "dark" ? colours.primary : "#146ef6",
       },
       "& .MuiSwitch-thumb": {
         zIndex: 1,
@@ -52,8 +53,5 @@ export const StyleSwitch = styled(Switch)(({ theme }) => ({
         backgroundColor: colours.white100,
       },
     },
-  },
-  [`&.${sliderClasses.thumb}`]: {
-    color: "red",
   },
 }));

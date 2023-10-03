@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import Switch from "@mui/material/Switch";
-import IconButton from "@mui/material/IconButton";
-import CheckIcon from "@mui/icons-material/Check";
+
 import { FormControlLabel, sliderClasses } from "@mui/material";
 import { StyleSwitch } from "./style";
-import { sliderClass } from "./style";
+import { SwitchClass } from "./style";
 import classNames from "classnames";
 
 interface SwitchButtonProps {
@@ -19,8 +17,6 @@ const SwitchButton: React.FC<SwitchButtonProps> = ({
   ischecked,
   onClick,
 }) => {
-  const [checked, setChecked] = useState(false);
-
   const toggleChecked = () => {
     onClick(!ischecked);
   };
@@ -34,7 +30,7 @@ const SwitchButton: React.FC<SwitchButtonProps> = ({
           name="custom-switch"
           color="primary"
           classes={{
-            root: classNames(sliderClass.root),
+            root: classNames(SwitchClass.root),
           }}
         />
       }

@@ -34,9 +34,8 @@
       "create-sequence": [
         "./dist/create-sequence/index.d.ts"
       ],
-      "checkbox": [
-        "./dist/checkbox/index.d.ts"
-      ],
+    
+      
       "icon": [
         "./dist/icon/index.d.ts"
       ],
@@ -100,11 +99,7 @@
       "import": "./dist/esm/select/index.js",
       "types": "./dist/select/index.d.ts"
     },
-    "./checkbox": {
-      "require": "./dist/checkbox/index.js",
-      "import": "./dist/esm/checkbox/index.js",
-      "types": "./dist/checkbox/index.d.ts"
-    },
+  
     "./switch-button": {
       "require": "./dist/switch-button/index.js",
       "import": "./dist/esm/switch-button/index.js",
