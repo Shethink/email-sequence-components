@@ -18,11 +18,11 @@ export const StyleSwitch = styled(Switch)(({ theme }) => ({
     cursor: "pointer",
     alignItems: "center",
     transition: "background-color 0.3s",
-    backgroundColor: "#cacacc",
+    backgroundColor: colours.white100,
     justifyContent: "center",
     height: 22,
     "&:hover": {
-      backgroundColor: "#737373",
+      backgroundColor: colours.switchhover,
     },
   },
   "& .MuiSwitch-switchBase": {

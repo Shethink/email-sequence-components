@@ -5,18 +5,14 @@ import { StyleSwitch } from "./style";
 import { SwitchClass } from "./style";
 import classNames from "classnames";
 
-interface SwitchButtonProps {
+interface SwitchProps {
   label?: string;
   checkedIcon?: React.ReactNode;
   ischecked: boolean;
   onClick: (ischecked: boolean) => void;
 }
 
-const SwitchButton: React.FC<SwitchButtonProps> = ({
-  label,
-  ischecked,
-  onClick,
-}) => {
+const Switch: React.FC<SwitchProps> = ({ label, ischecked, onClick }) => {
   const toggleChecked = () => {
     onClick(!ischecked);
   };
@@ -39,6 +35,6 @@ const SwitchButton: React.FC<SwitchButtonProps> = ({
   );
 };
 
-export default SwitchButton;
+export default Switch;
 
-// SwitchButton
+// Switch

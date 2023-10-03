@@ -38,6 +38,7 @@ export const colours = {
   white100: "#f7f7f7",
   white500: "#cacacc",
   white800: "#919191",
+  switchhover: "#737373",
 };
 
 type PaletteOptions = Omit<

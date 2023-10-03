@@ -28,8 +28,8 @@
       "button": [
         "./dist/button/index.d.ts"
       ],
-      "switch-button": [
-        "./dist/switch-button/index.d.ts"
+      "switch": [
+        "./dist/switch/index.d.ts"
       ],
       "create-sequence": [
         "./dist/create-sequence/index.d.ts"
@@ -100,10 +100,10 @@
       "types": "./dist/select/index.d.ts"
     },
   
-    "./switch-button": {
-      "require": "./dist/switch-button/index.js",
-      "import": "./dist/esm/switch-button/index.js",
-      "types": "./dist/switch-button/index.d.ts"
+    "./switch": {
+      "require": "./dist/switch/index.js",
+      "import": "./dist/esm/switch/index.js",
+      "types": "./dist/switch/index.d.ts"
     },
     "./text-field": {
       "require": "./dist/text-field/index.js",
