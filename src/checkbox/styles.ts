@@ -1,60 +1,50 @@
 import { styled } from "@mui/material/styles";
+import { alpha } from "@mui/material";
 import { colours } from "../theme-provider";
 
-export const CheckboxContainer = styled("ul")(() => ({
-  position: "relative",
-  margin: 0,
-  padding: 0,
+export const CheckboxContainer = styled("div")(() => ({
   display: "flex",
-  justifyContent: "center",
   alignItems: "center",
-  flexWrap: "wrap",
-  border: `3px solid #000`,
-  borderRadius: "10px",
-  pddding: "20px 0",
-  boxSizing: "border-box",
-  overflow: "hidden",
-  width: "100px",
-  // background: "linear-gradient(0deg, #fff, #fefeff)",
+}));
+
+export const StyledLabel = styled("label")(() => ({
+  cursor: "pointer",
+  display: "flex",
 
   "&::before": {
-    position: "absolute",
     content: '""',
-    width: "100%",
-    height: "100%",
-    background: "rgba(255, 0, 0, 0.05)",
-    bottom: "-50%",
-    pointerEvents: "none",
-    zIndex: 1,
+    width: "1rem",
+    height: "1rem",
+    borderRadius: "3px",
+    border: `2px solid ${colours.primary}`,
+    transition: ".5s ease",
+    marginRight: ".5rem",
   },
-}));
 
-export const CheckboxList = styled("li")(() => ({
-  // listStyle: "ethiopic-halehame-om-et",
-  position: "relative",
-  listStyle: "none",
-  textAlign: "center",
-  margin: "15px",
-}));
-
-export const CheckboxLabel = styled("label")(() => ({
-  position: "relative",
+  "&:hover": {
+    "&::before": {
+      transform: "scale(1.05)",
+    },
+  },
 }));
 
 export const StyledCheckbox = styled("input")(() => ({
   position: "absolute",
   opacity: 0,
   cursor: "pointer",
-}));
 
-export const CheckboxIconContainer = styled("div")(() => ({
-  width: "60px",
-  height: "60px",
-  background: "#101010",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  border: "3px solid #000",
-  borderRadius: "10px",
-  transition: ".5s",
+  "&:hover + label::before": {
+    transform: "scale(1.05)",
+    boxShadow: `${alpha(colours.black, 0.24)} 0px 3px 8px`,
+  },
+
+  "&:checked + label::before": {
+    background: colours.primary,
+    content: '"\\002714"',
+    display: "flex",
+    justifyContent: "center",
+    color: colours.white,
+    alignItems: "center",
+    fontSize: ".6rem",
+  },
 }));

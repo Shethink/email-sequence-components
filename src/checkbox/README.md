@@ -16,7 +16,6 @@ const [checked, setChecked] = React.useState(true);
     onChange={(e) => setChecked(e)}
     icon={<Close />}
   />
-  <span>Some label</span>
 </>;
 ```
 
