@@ -28,9 +28,14 @@
       "button": [
         "./dist/button/index.d.ts"
       ],
+      "switch": [
+        "./dist/switch/index.d.ts"
+      ],
       "create-sequence": [
         "./dist/create-sequence/index.d.ts"
       ],
+    
+      
       "icon": [
         "./dist/icon/index.d.ts"
       ],
@@ -93,6 +98,12 @@
       "require": "./dist/select/index.js",
       "import": "./dist/esm/select/index.js",
       "types": "./dist/select/index.d.ts"
+    },
+  
+    "./switch": {
+      "require": "./dist/switch/index.js",
+      "import": "./dist/esm/switch/index.js",
+      "types": "./dist/switch/index.d.ts"
     },
     "./text-field": {
       "require": "./dist/text-field/index.js",
