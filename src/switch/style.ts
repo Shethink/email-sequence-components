@@ -17,13 +17,10 @@ export const StyleSwitch = styled(Switch)(({ theme }) => ({
     display: "flex",
     cursor: "pointer",
     alignItems: "center",
-    transition: "background-color 0.3s",
-    backgroundColor: colours.white100,
+
+    backgroundColor: colours.white500,
     justifyContent: "center",
     height: 22,
-    "&:hover": {
-      backgroundColor: colours.switchhover,
-    },
   },
   "& .MuiSwitch-switchBase": {
     width: 16,
@@ -36,7 +33,9 @@ export const StyleSwitch = styled(Switch)(({ theme }) => ({
     backgroundColor: colours.white100,
 
     transitionDuration: "700ms",
-
+    "&:hover": {
+      backgroundColor: colours.white100,
+    },
     "&.Mui-checked": {
       transform: "translateX(18px)",
 
@@ -44,7 +43,7 @@ export const StyleSwitch = styled(Switch)(({ theme }) => ({
         opacity: 1,
 
         backgroundColor:
-          theme.palette.mode === "dark" ? colours.primary : "#146ef6",
+          theme.palette.mode === "dark" ? colours.primary : colours.primary,
       },
       "& .MuiSwitch-thumb": {
         zIndex: 1,
