@@ -15,6 +15,8 @@ import Checkbox from "../checkbox";
 import { Typography, Tooltip } from "@mui/material";
 import { colours } from "../theme-provider";
 import classNames from "classnames";
+import Switch from "../switch";
+import { Star } from "../icon";
 
 const active = "Active";
 const paused = "Paused";
@@ -50,31 +52,35 @@ export interface SequenceListProps {
   onEdit?: () => void;
 }
 
-export type SequencePhase = {
+export type SequencePhaseProps = {
   key: number | undefined;
   title: string;
   tooltipLabel: string;
 };
 
-const SequencePhase = ({
-  phaseData,
-  hasMargins,
-}: {
-  phaseData: SequencePhase;
-  hasMargins?: boolean;
-}) => {
-  const { key, title, tooltipLabel } = phaseData;
-  return (
-    <SequencePhaseContainer
-      className={classNames(hasMargins && sequencePhaseContainerClasses.margin)}
-    >
-      <span>{key ?? "-"}</span>
-      <Tooltip title={tooltipLabel} placement="top" arrow>
-        <SequqncePhaseTitle>{title}</SequqncePhaseTitle>
-      </Tooltip>
-    </SequencePhaseContainer>
-  );
-};
+const SequencePhase = memo(
+  ({
+    phaseData,
+    hasMargins,
+  }: {
+    phaseData: SequencePhaseProps;
+    hasMargins?: boolean;
+  }) => {
+    const { key, title, tooltipLabel } = phaseData;
+    return (
+      <SequencePhaseContainer
+        className={classNames(
+          hasMargins && sequencePhaseContainerClasses.margin
+        )}
+      >
+        <span>{key ?? "-"}</span>
+        <Tooltip title={tooltipLabel} placement="top" arrow>
+          <SequqncePhaseTitle>{title}</SequqncePhaseTitle>
+        </Tooltip>
+      </SequencePhaseContainer>
+    );
+  }
+);
 
 const SequenceItem = memo(({ item }: { item: SequenceListItem }) => {
   const {
@@ -92,7 +98,7 @@ const SequenceItem = memo(({ item }: { item: SequenceListItem }) => {
     repliedEmails,
   } = item;
 
-  const initialPhaseData: SequencePhase[] = [
+  const initialPhaseData: SequencePhaseProps[] = [
     { key: activeContacts, title: active, tooltipLabel: "Active Contacts" },
     { key: pausedContacts, title: paused, tooltipLabel: "" },
     { key: unsentContacts, title: unsent, tooltipLabel: "" },
@@ -101,7 +107,7 @@ const SequenceItem = memo(({ item }: { item: SequenceListItem }) => {
     { key: finishedContacts, title: finished, tooltipLabel: "" },
   ];
 
-  const additionalPhaseData: SequencePhase[] = [
+  const additionalPhaseData: SequencePhaseProps[] = [
     { key: scheduledEmails, title: scheduled, tooltipLabel: "" },
     { key: deliveredEmails, title: delivered, tooltipLabel: "" },
     { key: repliedEmails, title: replied, tooltipLabel: "" },
@@ -111,7 +117,7 @@ const SequenceItem = memo(({ item }: { item: SequenceListItem }) => {
 
   return (
     <Row>
-      <section style={{ width: "30%" }}>
+      <section style={{ width: "25%" }}>
         <Row>
           <Checkbox
             isChecked={isSelected}
@@ -145,6 +151,14 @@ const SequenceItem = memo(({ item }: { item: SequenceListItem }) => {
           ))}
         </Row>
       </AdditionalDataContainer>
+      <section style={{ padding: "0 .7rem" }}>
+        <Row>
+          <Switch isActive onToggle={() => {}} size="small" />
+          <Tooltip title="Add to starred sequences" placement="top">
+            <Star />
+          </Tooltip>
+        </Row>
+      </section>
     </Row>
   );
 });
@@ -163,4 +177,4 @@ const SequenceList = ({ items }: SequenceListProps) => {
 
 export default SequenceList;
 
-export { SequenceItem };
+export { SequenceItem, SequencePhase };

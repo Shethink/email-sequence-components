@@ -1,6 +1,6 @@
 {
   "name": "@shethink/email-sequence-components",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "dist/index.js",
   "src": "src/index.ts",
   "module": "dist/esm/index.js",
@@ -22,11 +22,17 @@
       "theme-provider": [
         "./dist/theme-provider/index.d.ts"
       ],
+      "button": [
+        "./dist/button/index.d.ts"
+      ],
+      "checkbox": [
+        "./dist/checkbox/index.d.ts"
+      ],
       "clickable": [
         "./dist/clickable/index.d.ts"
       ],
-      "button": [
-        "./dist/button/index.d.ts"
+      "container": [
+        "./dist/container/index.d.ts"
       ],
       "create-sequence": [
         "./dist/create-sequence/index.d.ts"
@@ -42,6 +48,12 @@
       ],
       "select": [
         "./dist/select/index.d.ts"
+      ],
+      "sequence-list": [
+        "./dist/sequence-list/index.d.ts"
+      ],
+      "switch": [
+        "./dist/switch/index.d.ts"
       ],
       "text-field": [
         "./dist/text-field/index.d.ts"
@@ -59,15 +71,25 @@
       "import": "./dist/esm/theme-provider/index.js",
       "types": "./dist/theme-provider/index.d.ts"
     },
+    "./button": {
+      "require": "./dist/button/index.js",
+      "import": "./dist/esm/button/index.js",
+      "types": "./dist/button/index.d.ts"
+    },
+    "./checkbox": {
+      "require": "./dist/checkbox/index.js",
+      "import": "./dist/esm/checkbox/index.js",
+      "types": "./dist/checkbox/index.d.ts"
+    },
     "./clickable": {
       "require": "./dist/clickable/index.js",
       "import": "./dist/esm/clickable/index.js",
       "types": "./dist/clickable/index.d.ts"
     },
-    "./button": {
-      "require": "./dist/button/index.js",
-      "import": "./dist/esm/button/index.js",
-      "types": "./dist/button/index.d.ts"
+    "./container": {
+      "require": "./dist/container/index.js",
+      "import": "./dist/esm/container/index.js",
+      "types": "./dist/container/index.d.ts"
     },
     "./create-sequence": {
       "require": "./dist/create-sequence/index.js",
@@ -93,6 +115,16 @@
       "require": "./dist/select/index.js",
       "import": "./dist/esm/select/index.js",
       "types": "./dist/select/index.d.ts"
+    },
+    "./sequence-list": {
+      "require": "./dist/sequence-list/index.js",
+      "import": "./dist/esm/sequence-list/index.js",
+      "types": "./dist/sequence-list/index.d.ts"
+    },
+    "./switch": {
+      "require": "./dist/switch/index.js",
+      "import": "./dist/esm/switch/index.js",
+      "types": "./dist/switch/index.d.ts"
     },
     "./text-field": {
       "require": "./dist/text-field/index.js",

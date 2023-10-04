@@ -1,3 +1,7 @@
+This component provides a skeleton flow to create an email sequence. It makes use of multiple internal components such as `Modal`, `Textfield`, and `Select`.
+
+There are multiple props that need to be supplied to this component for it to work properly.
+
 ```jsx
 import React from "react";
 

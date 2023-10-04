@@ -31,12 +31,11 @@ export const SequenceGeneralData = styled(Typography)(({ theme }) => ({
   color: theme.palette.primary.main,
   marginTop: ".3rem",
   fontWeight: "normal",
-  fontSize: ".8rem",
+  fontSize: ".7rem",
 }));
 
 export const SequencePhaseContainer = styled("div")(({ theme }) => ({
-  minWidth: "calc(100% / 6)",
-  maxWidth: "calc(100% / 3)",
+  width: "3rem",
 
   [`&.${sequencePhaseContainerClasses.margin}`]: {
     marginRight: "10px",
@@ -48,6 +47,16 @@ export const SequqncePhaseTitle = styled(Typography)({
   fontSize: ".6rem",
 });
 
+export const SequenceMetrics = styled("section")(({ theme }) => ({
+  width: "40%",
+  padding: "0 1rem",
+  borderRight: `1px dashed ${colours.black800}`,
+
+  [theme.breakpoints.down("lg")]: {
+    width: "55%",
+  },
+}));
+
 export const AdditionalDataContainer = styled("section")(({ theme }) => ({
   width: "25%",
   padding: "0 1rem",
@@ -55,15 +64,5 @@ export const AdditionalDataContainer = styled("section")(({ theme }) => ({
 
   [theme.breakpoints.down("lg")]: {
     display: "none",
-  },
-}));
-
-export const SequenceMetrics = styled("section")(({ theme }) => ({
-  width: "45%",
-  padding: "0 1rem",
-  borderRight: `1px dashed ${colours.black800}`,
-
-  [theme.breakpoints.down("lg")]: {
-    width: "55%",
   },
 }));

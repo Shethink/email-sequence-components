@@ -1,4 +1,7 @@
 import Button, { buttonClasses, ButtonProps, IconButtonProps } from "./button";
+
+import Checkbox, { CheckboxProps } from "./checkbox";
+
 import Clickable, {
   ClickableAction,
   ClickableDefault,
@@ -8,19 +11,32 @@ import Clickable, {
   RouterLink,
   withClickable,
 } from "./clickable";
+
 import Container, { ContainerProps, containerClasses } from "./container";
+
 import CreateSequence, {
   CreateSequenceProps,
   SequenceOptions,
 } from "./create-sequence";
-import { Close } from "./icon";
+
+import { Close, Star } from "./icon";
+
 import Modal, { modalClasses, ModalProps } from "./modal";
+
 import Row from "./row";
+
 import Select, { SelectProps, SelectOption } from "./select";
+
 import SequenceList, {
+  SequenceItem,
+  SequencePhase,
   SequenceListItem,
   SequenceListProps,
+  SequencePhaseProps,
 } from "./sequence-list";
+
+import Switch, { SwitchProps } from "./switch";
+
 import TextField, { inputClasses, InputProps } from "./text-field";
 import ThemeProvider, {
   poppinsRegularFont,
@@ -33,6 +49,7 @@ import ThemeProvider, {
 export {
   Button,
   buttonClasses,
+  Checkbox,
   Clickable,
   Close,
   Container,
@@ -47,13 +64,18 @@ export {
   poppinsBoldFont,
   Row,
   Select,
+  SequenceItem,
   SequenceList,
+  SequencePhase,
+  Star,
+  Switch,
   TextField,
   ThemeProvider,
   withClickable,
 };
 export type {
   ButtonProps,
+  CheckboxProps,
   ClickableAction,
   ClickableDefault,
   ClickableProps,
@@ -70,5 +92,7 @@ export type {
   SelectProps,
   SequenceListItem,
   SequenceListProps,
+  SequencePhaseProps,
+  SwitchProps,
   ThemeOptions,
 };

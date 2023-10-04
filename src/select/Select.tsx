@@ -1,4 +1,4 @@
-import React, { RefObject } from "react";
+import React from "react";
 import ReactSelect, {
   ActionMeta,
   GroupBase,
@@ -10,7 +10,6 @@ import ReactSelect, {
 } from "react-select";
 import makeAnimated from "react-select/animated";
 import { SelectComponents } from "react-select/dist/declarations/src/components";
-import { colours } from "../theme-provider";
 
 export type SelectOption = {
   label: string;

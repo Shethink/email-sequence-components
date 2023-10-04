@@ -1,3 +1,3 @@
-import { Close } from "@mui/icons-material";
+import { Close, Star } from "@mui/icons-material";
 
-export { Close };
+export { Close, Star };
