@@ -5,6 +5,7 @@ import {
   ListWrapper,
   SequenceBasicDetails,
   SequenceGeneralData,
+  SequenceItemWrapper,
   SequenceMetrics,
   SequencePhaseContainer,
   SequqncePhaseTitle,
@@ -29,7 +30,7 @@ const delivered = "Delivered";
 const replied = "Reply";
 
 export type SequenceListItem = {
-  id: string;
+  id: number;
   name: string;
   createdBy: string;
   numberOfSteps?: number;
@@ -46,6 +47,7 @@ export type SequenceListItem = {
 
 export interface SequenceListProps {
   items: SequenceListItem[];
+  onClickSequence: (id: number) => void;
   onActivateSequence?: () => void;
   onStarSequence?: () => void;
   onArchive?: () => void;
@@ -82,93 +84,108 @@ const SequencePhase = memo(
   }
 );
 
-const SequenceItem = memo(({ item }: { item: SequenceListItem }) => {
-  const {
-    name,
-    createdBy,
-    numberOfSteps,
-    activeContacts,
-    pausedContacts,
-    unsentContacts,
-    bouncedContacts,
-    spamBlockedContacts,
-    finishedContacts,
-    scheduledEmails,
-    deliveredEmails,
-    repliedEmails,
-  } = item;
+const SequenceItem = memo(
+  ({
+    item,
+    onClickSequence,
+  }: {
+    item: SequenceListItem;
+    onClickSequence: (id: number) => void;
+  }) => {
+    const {
+      name,
+      createdBy,
+      numberOfSteps,
+      activeContacts,
+      pausedContacts,
+      unsentContacts,
+      bouncedContacts,
+      spamBlockedContacts,
+      finishedContacts,
+      scheduledEmails,
+      deliveredEmails,
+      repliedEmails,
+      id,
+    } = item;
 
-  const initialPhaseData: SequencePhaseProps[] = [
-    { key: activeContacts, title: active, tooltipLabel: "Active Contacts" },
-    { key: pausedContacts, title: paused, tooltipLabel: "" },
-    { key: unsentContacts, title: unsent, tooltipLabel: "" },
-    { key: bouncedContacts, title: bounced, tooltipLabel: "" },
-    { key: spamBlockedContacts, title: spam_blocked, tooltipLabel: "" },
-    { key: finishedContacts, title: finished, tooltipLabel: "" },
-  ];
+    const initialPhaseData: SequencePhaseProps[] = [
+      { key: activeContacts, title: active, tooltipLabel: "Active Contacts" },
+      { key: pausedContacts, title: paused, tooltipLabel: "" },
+      { key: unsentContacts, title: unsent, tooltipLabel: "" },
+      { key: bouncedContacts, title: bounced, tooltipLabel: "" },
+      { key: spamBlockedContacts, title: spam_blocked, tooltipLabel: "" },
+      { key: finishedContacts, title: finished, tooltipLabel: "" },
+    ];
 
-  const additionalPhaseData: SequencePhaseProps[] = [
-    { key: scheduledEmails, title: scheduled, tooltipLabel: "" },
-    { key: deliveredEmails, title: delivered, tooltipLabel: "" },
-    { key: repliedEmails, title: replied, tooltipLabel: "" },
-  ];
+    const additionalPhaseData: SequencePhaseProps[] = [
+      { key: scheduledEmails, title: scheduled, tooltipLabel: "" },
+      { key: deliveredEmails, title: delivered, tooltipLabel: "" },
+      { key: repliedEmails, title: replied, tooltipLabel: "" },
+    ];
 
-  const [isSelected, setIsSelected] = useState<boolean>(false);
+    const [isSelected, setIsSelected] = useState<boolean>(false);
 
-  return (
-    <Row>
-      <section style={{ width: "25%" }}>
-        <Row>
-          <Checkbox
-            isChecked={isSelected}
-            onChange={(checked) => setIsSelected(checked)}
-          />
-          <SequenceBasicDetails>
-            <Typography variant="body1" fontWeight={"500"}>
-              {name}
-            </Typography>
-            <Row>
-              <SequenceGeneralData>{createdBy}</SequenceGeneralData>
-              <SequenceGeneralData
-                marginLeft={".5rem"}
-                sx={{ color: colours.black400 }}
-              >{`${numberOfSteps ?? 0} steps`}</SequenceGeneralData>
-            </Row>
-          </SequenceBasicDetails>
-        </Row>
-      </section>
-      <SequenceMetrics>
-        <Row>
-          {[...initialPhaseData].map((phase) => (
-            <SequencePhase phaseData={phase} key={phase.title} />
-          ))}
-        </Row>
-      </SequenceMetrics>
-      <AdditionalDataContainer>
-        <Row>
-          {[...additionalPhaseData].map((phase) => (
-            <SequencePhase phaseData={phase} key={phase.title} hasMargins />
-          ))}
-        </Row>
-      </AdditionalDataContainer>
-      <section style={{ padding: "0 .7rem" }}>
-        <Row>
-          <Switch isActive onToggle={() => {}} size="small" />
-          <Tooltip title="Add to starred sequences" placement="top">
-            <Star />
-          </Tooltip>
-        </Row>
-      </section>
-    </Row>
-  );
-});
+    return (
+      <SequenceItemWrapper onClick={() => onClickSequence(id)}>
+        <section style={{ width: "25%" }}>
+          <Row>
+            <Checkbox
+              isChecked={isSelected}
+              onChange={(checked) => setIsSelected(checked)}
+            />
+            <SequenceBasicDetails>
+              <Typography variant="body1" fontWeight={"500"}>
+                {name}
+              </Typography>
+              <Row>
+                <SequenceGeneralData>{createdBy}</SequenceGeneralData>
+                <SequenceGeneralData
+                  marginLeft={".5rem"}
+                  sx={{ color: colours.black400 }}
+                >{`${numberOfSteps ?? 0} steps`}</SequenceGeneralData>
+              </Row>
+            </SequenceBasicDetails>
+          </Row>
+        </section>
+        <SequenceMetrics>
+          <Row>
+            {[...initialPhaseData].map((phase) => (
+              <SequencePhase phaseData={phase} key={phase.title} />
+            ))}
+          </Row>
+        </SequenceMetrics>
+        <AdditionalDataContainer>
+          <Row>
+            {[...additionalPhaseData].map((phase) => (
+              <SequencePhase phaseData={phase} key={phase.title} hasMargins />
+            ))}
+          </Row>
+        </AdditionalDataContainer>
+        <section style={{ padding: "0 .7rem" }}>
+          <Row>
+            <Switch isActive onToggle={() => {}} size="small" />
+            <Tooltip title="Add to starred sequences" placement="top">
+              <Star />
+            </Tooltip>
+          </Row>
+        </section>
+      </SequenceItemWrapper>
+    );
+  }
+);
 
-const SequenceList = ({ items }: SequenceListProps) => {
+const SequenceList = ({ items, onClickSequence }: SequenceListProps) => {
   return (
     <Container fullWidth>
       <ListWrapper>
         {items.map((item) => {
-          return <SequenceItem item={item} key={item.id} />;
+          return (
+            <SequenceItem
+              item={item}
+              onClickSequence={onClickSequence}
+              key={item.id.toString()}
+            />
+          );
         })}
       </ListWrapper>
     </Container>

@@ -6,9 +6,18 @@ import { ModalContainer, StyledModal, modalClasses } from "./styles";
 export interface ModalProps extends MaterialModalProps {
   children: React.ReactElement;
   centered?: boolean;
+  hasPadding?: boolean;
+  hasDarkBackground?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ open, onClose, children, centered }) => {
+const Modal: React.FC<ModalProps> = ({
+  open,
+  onClose,
+  children,
+  centered,
+  hasPadding = true,
+  hasDarkBackground = false,
+}) => {
   return (
     <StyledModal
       open={open}
@@ -17,7 +26,14 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children, centered }) => {
         root: classNames(centered && modalClasses.center),
       }}
     >
-      <ModalContainer>{children}</ModalContainer>
+      <ModalContainer
+        className={classNames(
+          hasPadding && modalClasses.padded,
+          hasDarkBackground && modalClasses.dark
+        )}
+      >
+        {children}
+      </ModalContainer>
     </StyledModal>
   );
 };

@@ -157,6 +157,7 @@ const CreateSequence: React.FC<CreateSequenceProps> = ({
                           styles={{
                             container: () => ({ marginTop: 5 }),
                           }}
+                          onChange={(e) => console.log(e)}
                         />
                       </div>
                     </Row>

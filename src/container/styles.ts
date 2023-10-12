@@ -1,4 +1,5 @@
 import { styled } from "@mui/material/styles";
+import { colours } from "../theme-provider";
 
 const PREFIX = "Container";
 
@@ -13,4 +14,5 @@ export const Root = styled("div")(() => ({
   [`&.${classes.fullWidth}`]: {
     width: "100%",
   },
+  background: colours.white,
 }));

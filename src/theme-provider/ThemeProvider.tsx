@@ -17,15 +17,20 @@ import { globalStyles } from "./globalStyles";
 export const colours = {
   primary: "#51226f",
   bodyBgBase: "#fff",
+
   black: "#000000",
   black200: "#1a1a1a",
   black400: "#474747",
   black800: "#e3e3e5",
-  blue100: "#d6d7dc",
+
+  blue100: "#ece7ff",
   blue300: "#858895",
+  blue500: "#5f38eb",
   blue800: "#34384f",
   blue900: "#292d41",
+
   charcoal: "#3b3b3b",
+
   cyan100: "#ccecf9",
   cyan200: "#66c5ee",
   cyan300: "#33b2e9",
@@ -33,7 +38,9 @@ export const colours = {
   cyan500: "#51226f",
   cyan600: "#005b8c",
   cyan700: "#004b73",
+
   slate: "#70706f",
+
   white: "#ffffff",
   white100: "#f7f7f7",
   white500: "#cacacc",
@@ -205,7 +212,7 @@ export const getTheme = (
       },
       h6: {
         fontFamily: "Poppins",
-        fontWeight: "lighter",
+        fontWeight: "normal",
         fontSize: "1.125rem",
         lineHeight: 1.2,
       },
@@ -214,7 +221,7 @@ export const getTheme = (
         lineHeight: 1.4,
       },
       body2: {
-        fontSize: "1.125rem",
+        fontSize: ".8rem",
         lineHeight: 1.4,
       },
       subtitle2: {

@@ -8,6 +8,8 @@ export const modalClasses = {
   root: `${PREFIX}-root`,
   center: `${PREFIX}-center`,
   restricted: `${PREFIX}-restricted`,
+  padded: `${PREFIX}-padded`,
+  dark: `${PREFIX}-dark`,
 };
 
 export const StyledModal = styled(Modal)(() => ({
@@ -19,10 +21,21 @@ export const StyledModal = styled(Modal)(() => ({
 }));
 
 export const ModalContainer = styled("div")(() => ({
-  minWidth: "40vw",
+  minWidth: "45vw",
   maxWidth: "60vw",
   background: alpha(colours.white, 1),
   borderRadius: 6,
-  padding: "1rem 2rem",
   outline: "none",
+  padding: "0",
+  maxHeight: "80vh",
+  overflowY: "auto",
+  overflowX: "hidden",
+
+  [`&.${modalClasses.padded}`]: {
+    padding: "1rem 2rem",
+  },
+
+  [`&.${modalClasses.dark}`]: {
+    background: alpha(colours.white100, 1),
+  },
 }));

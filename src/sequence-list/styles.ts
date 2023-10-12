@@ -9,12 +9,19 @@ export const sequencePhaseContainerClasses = {
 };
 
 export const ListWrapper = styled("div")({
-  border: `1px solid ${colours.white500}`,
   width: "100%",
   borderRadius: "4px",
-  padding: "1rem",
+  border: `1px solid ${colours.white500}`,
+  borderBottom: "none",
+});
+
+export const SequenceItemWrapper = styled("div")({
+  display: "flex",
+  alignItems: "center",
   cursor: "pointer",
-  transition: ".2s ease-in",
+  padding: "1rem",
+  borderBottom: `1px solid ${colours.white500}`,
+  transition: ".3s ease",
 
   "&:hover": {
     background: colours.white100,

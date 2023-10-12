@@ -56,11 +56,11 @@ const Select: React.FC<SelectProps> = ({
     return (
       <div>
         <SelectComponent.Option {...props}>
-          <input
+          {/* <input
             type="checkbox"
             checked={props.isSelected}
             onChange={() => null}
-          />{" "}
+          />{" "} */}
           <label>{props.label}</label>
         </SelectComponent.Option>
       </div>
